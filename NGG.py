@@ -1,22 +1,27 @@
+
 import random
 import time
 
-print("welcome to guessing game! you have to guess number between 1 to 20  ;)")
+name = input("what is your name: ")
 time.sleep(3)
-print("wait, let me pic a number")
-time.sleep(2)
 
-guess = int(input("what's your guess: "))
+print(f"welcome {name}")
+
+
+guess = int(input("guess secret number: "))
 correct_number = random.randint(1,20)
-guess_count = 1
+guess_count = 0
 
 while guess != correct_number:
- guess_count += 1
- if guess < correct_number:
-  guess = int(input("wrong! guess higher number then this: "))
+    guess_count += 1
+    if guess < correct_number:
+        guess = int(input("go highter: "))
 
- else:
-     guess = int(input("wrong! guess lower number then this: "))
+    else:
+         guess = int(input("go lower: "))
+
+print(f"congrats {name}! correct number is {correct_number} you took {guess_count} attempts")         
+
+        
 
 
-print(f"congrats ! correct answer is {correct_number} , it took you {guess_count} attempts")
